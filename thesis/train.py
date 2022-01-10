@@ -2,7 +2,7 @@ import os
 
 import torch
 from torch.utils.data import DataLoader, RandomSampler
-from tqdm.cli import tqdm
+from tqdm.notebook import tqdm
 from transformers import (
     AdamW,
     AutoConfig,
@@ -61,13 +61,6 @@ def do_train_setup():
         model = AutoModelForQuestionAnswering.from_pretrained(
             checkpoint_output_dir, config=config
         )
-    model.to(device)
-    global_step, tr_loss = train(train_dataset, model, tokenizer, checkpoint)
-    print(" global_step = {}, average loss = {}".format(global_step, tr_loss))
-    print("Saving model checkpoint to {}".format(output_dir))
-    model_to_save = model.module if hasattr(model, "module") else model
-    model_to_save.save_pretrained(output_dir)
-    tokenizer.save_pretrained(output_dir)
     return model, tokenizer, train_dataset, checkpoint
 
 

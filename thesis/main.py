@@ -1,7 +1,5 @@
 import os
 
-import numpy as np
-from tqdm.notebook import tqdm
 from transformers import AutoConfig, AutoModelForQuestionAnswering, AutoTokenizer
 from pathlib import Path
 from eval import evaluate
