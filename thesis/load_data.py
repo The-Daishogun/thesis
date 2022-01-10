@@ -20,7 +20,9 @@ def load_and_cache_examples(tokenizer, evaluate=False, output_examples=False):
     input_dir = "data"
     cached_features_file = os.path.join(
         input_dir,
-        "cached_{}_{}%".format("dev" if evaluate else "train", input_prcnt),
+        "cached_{}{}".format(
+            "dev" if evaluate else "train", f"_{input_prcnt}%" if not evaluate else ""
+        ),
     )
 
     if os.path.exists(cached_features_file):
@@ -39,7 +41,9 @@ def load_and_cache_examples(tokenizer, evaluate=False, output_examples=False):
         else:
             examples = processor.get_train_examples(input_dir, filename="train.json")
         examples_len = len(examples)
-        used_examples = int(examples_len * (input_prcnt / 100))
+        used_examples = (
+            int(examples_len * (input_prcnt / 100)) if not evaluate else examples_len
+        )
         print(f"Using {used_examples} of {examples_len} examples")
         features, dataset = squad_convert_examples_to_features(
             examples=examples[:used_examples],
