@@ -3,7 +3,7 @@ import os
 import numpy as np
 from tqdm.notebook import tqdm
 from transformers import AutoConfig, AutoModelForQuestionAnswering, AutoTokenizer
-
+from pathlib import Path
 from eval import evaluate
 from params import *
 from train import do_train_setup, train
@@ -11,6 +11,7 @@ from utils import set_seed
 
 if __name__ == "__main__":
     set_seed()
+    Path(output_dir).mkdir(parents=True, exist_ok=True)
 
     global_step = ""
 

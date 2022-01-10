@@ -1,12 +1,14 @@
 import torch
+
 """Parameters"""
 
-#model_name_or_path = 'bert-base-cased'
-#model_name_or_path = 'm3hrdadfi/albert-fa-base-v2'
-#model_name_or_path = 'HooshvareLab/bert-fa-base-uncased'
-model_name_or_path = 'bert-base-multilingual-cased'
-output_dir = 'model'
-dataset_name = 'Sajad'
+# model_name_or_path = 'bert-base-cased'
+# model_name_or_path = 'm3hrdadfi/albert-fa-base-v2'
+# model_name_or_path = 'HooshvareLab/bert-fa-base-uncased'
+model_name_or_path = "bert-base-multilingual-cased"
+output_dir = "model"
+dataset_name = "Sajad"
+input_prcnt = 25
 version_2 = True
 null_score_diff_threshold = 0
 max_seq_length = 384
