@@ -2,6 +2,15 @@
 base code for my thesis
 check branches for different variants
 
+## Setup and Configuration
+install [Poetry](https://python-poetry.org/) and run:
+```
+poetry install
+```
+Run main.py using:
+```
+python thesis/main.py
+```
 
 
 ## Experiment Results
