@@ -14,7 +14,7 @@ python thesis/main.py
 
 
 ## Experiment Results
-| QA Model                     | Validation Model | Train Samples % | # Train Samples | EM  | F1  |
-| ---------------------------- | ---------------- | --------------- | --------------- | --- | --- |
-| bert-base-multilingual-cased | -                | 25%             | 16240           |     |     |
+| QA Model                     | Validation Model | Percentage | # Train Samples | # Eval Samples | EM       | F1       |
+| ---------------------------- | ---------------- | ---------- | --------------- | -------------- | -------- | -------- |
+| bert-base-multilingual-cased | -                | 25%        | 16240           | 5726           | 52.75934 | 56.49878 |
 
