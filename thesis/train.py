@@ -2,7 +2,7 @@ import os
 
 import torch
 from torch.utils.data import DataLoader, RandomSampler
-from tqdm.notebook import tqdm
+from tqdm.cli import tqdm
 from transformers import (
     AdamW,
     AutoConfig,

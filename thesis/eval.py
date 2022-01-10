@@ -4,7 +4,7 @@ import timeit
 
 import torch
 from torch.utils.data import DataLoader, SequentialSampler
-from tqdm.notebook import tqdm
+from tqdm.cli import tqdm
 from transformers.data.metrics.squad_metrics import (
     compute_predictions_logits,
     squad_evaluate,
